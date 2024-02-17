@@ -16,6 +16,7 @@ class Notice:
         self.time = self.description['time']
         self.type = self.description['detail_type']
         self.sender = self.description['from_user_id']
+        self.self_id = self.description['self']['user_id']
 
     def get_user_id(self):
         return self.user_id
@@ -24,4 +25,4 @@ class Notice:
         return self.group_id
 
     def is_tome(self) -> bool:
-        return s
+        return self.self_id == self.user_id
