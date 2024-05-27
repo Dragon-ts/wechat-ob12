@@ -4,8 +4,8 @@ with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="wechat-ob12",
-    version="0.0.1",
+    name="wechat_ob12",
+    version="0.0.2.2",
     author="Dragon_ts",
     author_email="2658651085@qq.com",
     description="onebot12 to wechat",
