@@ -1,6 +1,5 @@
 import re
 import json5
-import datetime
 
 
 class Notice:
@@ -15,8 +14,11 @@ class Notice:
         self.group_id = self.description['group_id']
         self.time = self.description['time']
         self.type = self.description['detail_type']
-        self.sender = self.description['from_user_id']
         self.self_id = self.description['self']['user_id']
+        try:
+            self.sender = self.description['from_user_id']
+        except KeyError:
+            self.sender = self.user_id
 
     def get_user_id(self):
         return self.user_id
